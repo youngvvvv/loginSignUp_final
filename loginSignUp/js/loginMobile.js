@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const video = document.getElementById("video");
     const signupButton = document.getElementById("signup");
-    const ws = new WebSocket('wss://9f83-110-12-48-34.ngrok-free.app/');
+    const ws = new WebSocket('wss://cfa0-110-12-48-27.ngrok-free.app/');
 
     let verificationInterval;
     function getQueryParam(param) {
@@ -144,6 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const isMatch = compareDescriptors(storedDescriptor,liveDescriptor);
             console.log(`Comparison result: ${isMatch}`);
             sendMatchResult(isMatch);
+            if(isMatch) window.location.href='mobile.html';
         } else {
             console.log('No live descriptor captured.');
         }
