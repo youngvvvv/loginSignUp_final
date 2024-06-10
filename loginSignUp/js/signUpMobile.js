@@ -38,6 +38,9 @@ document.addEventListener('DOMContentLoaded', function () {
     function initializeFaceDetection() {
       const canvas = faceapi.createCanvasFromMedia(video);
       document.body.append(canvas);
+      canvas.style.position = 'absolute';
+      canvas.style.top = video.offsetTop + 'px';
+      canvas.style.left = video.offsetLeft + 'px';
       const displaySize = { width: video.width, height: video.height };
       faceapi.matchDimensions(canvas, displaySize);
 
